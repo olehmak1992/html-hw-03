@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hw-one</title>
+    <title>hw-three</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">    
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
+        <div class="container">
         <nav>
-          <a href="./index.html" class="logo" lang="en"><span>Web</span>Studio</a>
+          <a href="./index.html" class="logo" lang="en"><span class="web">Web</span>Studio</a>
           <ul class="site-nav list">
               <li><a href="" class="current">Студия</a></li>
               <li><a href="./portfolio.html">Портфолио</a></li>
@@ -25,13 +27,15 @@
             <a href="" lang="en">info@devstudio.com</a>
             <a href="">+38 096 111 11 11</a>
         </address>
+        </div>
     </header>
     <main>
         <section class="hero">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-btn">Заказать услугу</button>
+            <button type="button" class="hero-btn btn">Заказать услугу</button>
         </section>
-<section class="section">
+<section class="section features">
+    <div class="container">
     <h2 class="section-title">Особенности</h2>
         <ul class="features-list list">
             <li>
@@ -50,17 +54,21 @@
                 <h3 class="title">Современные технологии</h3>
                 <p>Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>              
             </li>
-        </ul>   
+        </ul>
+        </div>
 </section>
-<section class="section">
+<section class="section occup padding">
+    <div class="container">
     <h2 class="section-title">Чем мы занимаемся</h2>
     <ul class="list">
         <li><img src="./images/occup/occup-1.jpg" alt="програмирование" width="370"></li>
         <li><img src="./images/occup/occup-2.jpg" alt="тестирование"  width="370"></li>
         <li><img src="./images/occup/occup-3.jpg" alt="дизайн"  width="370"></li>
     </ul>
+    </div>
 </section>
-<section class="section">
+<section class="section team padding">
+    <div class="container">
     <h2 class="section-title">Наша команда</h2>
     <ul class="team-list list">
         <li>
@@ -84,11 +92,12 @@
             <p lang="en">UI Designer</p>
         </li>
     </ul>
+    </div>
 </section>
     </main>
-    <footer>
-        <div>
-        <a href="./index.html" lang="en" class="logo"><span>Web</span>Studio</a>
+    <footer class="page-footer">
+        <div class="container">
+        <a href="./index.html" lang="en" class="logo"><span class="web">Web</span>Studio</a>
         <address class="footer-address">
             г. Киев, пр-т Леси Украинки, 26 <br>
             <a href="" lang="en">info@example.com</a> <br>
