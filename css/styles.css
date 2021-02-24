@@ -11,8 +11,6 @@
  цвет фона команды и кнопок на портфолио #F5F4FA
 */
 
-/* Common styles */
-
 :root {
   --primary-text-color: #757575;
   --title-text-color: #212121;
@@ -43,6 +41,28 @@ p {
   margin: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilities */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .btn {
   border: none;
   border-radius: 4px;
@@ -50,9 +70,10 @@ p {
 }
 
 .list {
-  list-style: none;
   padding: 0;
   margin: 0;
+
+  list-style: none;
 }
 
 .container {
@@ -68,21 +89,36 @@ p {
 }
 
 .section-title {
-  color: var(--title-text-color);
+  margin-bottom: 50px;
 
+  color: var(--title-text-color);
   font-weight: bold;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-
-  margin-bottom: 50px;
 }
 
-/* Site-nav */
+/* Header */
+
+.page-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+/* Page-nav */
+
+.page-nav {
+  display: flex;
+  align-items: center;
+}
 
 .logo {
   color: #000;
-
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -91,44 +127,61 @@ p {
   text-decoration: none;
 }
 
+.page-nav .logo {
+  margin-right: 93px;
+}
+
 .logo .web {
   color: #2196f3;
 }
 
-.site-nav a {
-  color: var(--title-text-color);
+.nav-list {
+  display: flex;
+}
 
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-list a {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--title-text-color);
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.14;
   text-decoration: none;
 }
 
-.site-nav a:hover,
-.site-nav a:focus {
+.nav-list a:hover,
+.nav-list a:focus {
   color: var(--accent);
 }
 
-.site-nav .current {
+.nav-list .current {
   color: var(--accent);
 }
 
 /* Header address */
 
-.header-address a {
+.address-link {
   color: var(--primary-text-color);
-
   font-style: normal;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
-
   cursor: pointer;
 }
 
-.header-address a:hover,
-.header-address a:focus {
+.address-link:not(:last-child) {
+  margin-right: 50px;
+}
+
+.address-link:hover,
+.address-link:focus {
   color: var(--accent);
 }
 
@@ -140,28 +193,26 @@ p {
 }
 
 .hero-title {
-  color: #fff;
+  margin-bottom: 30px;
 
+  color: #fff;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-
-  margin-bottom: 30px;
 }
 
 .hero-btn {
+  padding: 10px 32px;
+
   color: #fff;
   background-color: var(--accent);
-
   font-family: inherit;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
-
-  padding: 10px 32px;
 }
 
 /* Section features*/
@@ -170,63 +221,104 @@ p {
   padding-top: 94px;
 }
 
-.features-list .title {
-  color: var(--title-text-color);
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.features-list .item {
+  width: calc((100% - 90px) / 4);
+}
+
+.features-list .item:not(:nth-child(4n + 4)) {
+  margin-right: 30px;
+}
+
+/* Обратить внимание на размеры заголовка, почему фонтсайз не унаследуется от боди */
+
+.features-list .title {
+  margin-bottom: 10px;
+
+  color: var(--title-text-color);
+  font-size: inherit;
   font-weight: bold;
   line-height: 1.14;
   text-transform: uppercase;
-
-  margin-bottom: 10px;
 }
 
 .features-list p {
-  line-height: 1.7;
+  line-height: 1.71;
 }
 
 /* Occupation */
+
+.occup .list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.occup-item {
+  width: 370px;
+  margin: 15px;
+}
+
+/* Team */
 
 .section.team {
   background-color: var(--tertiary-bg-color);
 }
 
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
 .team-list li {
+  margin: 15px;
+
+  text-align: center;
+}
+
+.team-desc {
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
-.team img {
-  margin-bottom: 30px;
-}
-
 .team-list .title {
-  color: var(--title-text-color);
+  margin-bottom: 10px;
 
+  color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
-
-  margin-bottom: 10px;
 }
 
 .team-list p {
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
 }
 
 /* Portfolio */
 
 .btn-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -4px;
   margin-bottom: 34px;
 }
 
-.btn-list .btn {
-  color: var(--title-text-color);
-  background-color: var(--tertiary-bg-color);
+.btn-list li {
+  margin: 4px;
+}
 
+.btn-list .btn {
   padding: 6px 22px;
 
+  color: var(--title-text-color);
+  background-color: var(--tertiary-bg-color);
   font-family: inherit;
   font-size: 16px;
   font-weight: 500;
@@ -240,21 +332,28 @@ p {
   background-color: var(--accent);
 }
 
-.products-item {
-  padding-bottom: 20px;
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px -15px;
 }
 
-.products-item img {
-  margin-bottom: 20px;
+.products-item {
+  margin: 15px;
+}
+
+.products-item-content {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
 }
 
 .products-list .title {
-  color: var(--title-text-color);
-
   margin-bottom: 4px;
-  padding-left: 24px;
-  padding-right: 24px;
 
+  color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -262,9 +361,6 @@ p {
 }
 
 .products-item p {
-  padding-left: 24px;
-  padding-right: 24px;
-
   font-size: 16px;
   line-height: 1.88;
 }
@@ -272,33 +368,31 @@ p {
 /* Footer */
 
 .page-footer {
-  background-color: var(--secondary-bg-color);
-
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: var(--secondary-bg-color);
 }
 
 .page-footer a {
   color: #fff;
-
-  /* margin-bottom: 20px; */
 }
 
 .footer-address {
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 
+  color: #fff;
   font-style: normal;
   line-height: 1.71;
-
-  margin-top: 20px;
 }
 
 .footer-address a {
-  color: var(--ftr-address-link-color);
+  margin-top: 9px;
 
+  color: var(--ftr-address-link-color);
   font-style: normal;
   text-decoration: none;
   cursor: pointer;
-
-  margin-top: 9px;
 }
